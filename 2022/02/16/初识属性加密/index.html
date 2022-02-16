@@ -6,15 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hexo</title>
+  <title>初识属性加密 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="初识属性加密ABE在传统的公钥加密算法中，若要将一份明文文件加密发送给N个不同用户，需要保存N个用户的公钥分别加密N次，形成N份不同的密文分别发送。  而基于属性的加密(Attribute-based encryption (ABE) )，则只需要对明文文件加密一次，分别发送给N个不同用户，根据相应策略只有特定的用户才可以解密。  属性加密算法一般包含四个部分： ​    Setup阶段：也称系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识属性加密">
+<meta property="og:url" content="http://example.com/2022/02/16/%E5%88%9D%E8%AF%86%E5%B1%9E%E6%80%A7%E5%8A%A0%E5%AF%86/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="初识属性加密ABE在传统的公钥加密算法中，若要将一份明文文件加密发送给N个不同用户，需要保存N个用户的公钥分别加密N次，形成N份不同的密文分别发送。  而基于属性的加密(Attribute-based encryption (ABE) )，则只需要对明文文件加密一次，分别发送给N个不同用户，根据相应策略只有特定的用户才可以解密。  属性加密算法一般包含四个部分： ​    Setup阶段：也称系统">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/.com//1.png">
+<meta property="og:image" content="http://example.com/.com//2.png">
+<meta property="og:image" content="http://example.com/.com//3.png">
+<meta property="og:image" content="http://example.com/.com//4.png">
+<meta property="article:published_time" content="2022-02-16T05:11:43.000Z">
+<meta property="article:modified_time" content="2022-02-16T05:28:43.734Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="密码学">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/.com//1.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -156,36 +166,70 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-初识属性加密" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/16/%E5%88%9D%E8%AF%86%E5%B1%9E%E6%80%A7%E5%8A%A0%E5%AF%86/" class="archive-article-date">
-  	<time datetime="2022-02-16T05:11:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-16</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/16/%E5%88%9D%E8%AF%86%E5%B1%9E%E6%80%A7%E5%8A%A0%E5%AF%86/">初识属性加密</a>
+    <h1 class="article-title" itemprop="name">
+      初识属性加密
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2022/02/16/%E5%88%9D%E8%AF%86%E5%B1%9E%E6%80%A7%E5%8A%A0%E5%AF%86/" class="archive-article-date">
+  	<time datetime="2022-02-16T05:11:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="初识属性加密"><a href="#初识属性加密" class="headerlink" title="初识属性加密"></a>初识属性加密</h3><h4 id="ABE"><a href="#ABE" class="headerlink" title="ABE"></a>ABE</h4><p>在传统的公钥加密算法中，若要将一份明文文件加密发送给N个不同用户，需要保存N个用户的公钥分别加密N次，形成N份不同的密文分别发送。</p>
+<p><img src="/.com//1.png" alt="avatar"></p>
+<p>而基于属性的加密(Attribute-based encryption (ABE) )，则只需要对明文文件加密一次，分别发送给N个不同用户，根据相应策略只有特定的用户才可以解密。</p>
+<p><img src="/.com//2.png" alt="avatar"></p>
+<p>属性加密算法一般包含四个部分：</p>
+<p>​    <strong>Setup</strong>阶段：也称系统初始化阶段，输入系统安全参数，产生相应的公共参数(<em>PK</em>)和系统主密钥(<em>MK</em>)</p>
+<p>​    <strong>KeyGen</strong>阶段：也称密钥生成阶段，解密用户向系统提交自己的属性，获得属性相关联的用户密钥(<em>SK</em>)</p>
+<p>​    <strong>Enc</strong>阶段：也称加密阶段，数据拥有者对数据进行加密得到密文(<em>CT</em>)并发送给用户或者发送到公共云上</p>
+<p>​    <strong>Dec</strong>阶段：也称解密阶段，解密用户获得密文，用自己的密钥(<em>SK</em>)进行解密</p>
+<p>ABE又进一步分为KP-ABE(key-policy ABE)和CP-ABE(ciphertext-policy ABE)两大类。</p>
+<h4 id="KP-ABE"><a href="#KP-ABE" class="headerlink" title="KP-ABE"></a>KP-ABE</h4><p><img src="/.com//3.png" alt="avatar"></p>
+<p>在基于秘钥的属性加密(KP-ABE)中，访问策略存放在秘钥中。即假设访问策略为一颗树，则树的结构存放于用户的秘钥中，不同用户对应不同的访问策略。密文只需要包含一组属性，相应用户则可与自己的秘钥结合得到明文。</p>
+<h4 id="CP-ABE"><a href="#CP-ABE" class="headerlink" title="CP-ABE"></a>CP-ABE</h4><p><img src="/.com//4.png" alt="avatar"></p>
+<p>在基于秘文的属性加密(KP-ABE)中，访问策略存放在秘钥中。即访问策略存在于密文中，得到密文的用户需要将自己的属性与密文访问策略进行结合以得到明文</p>
+<p>CP-ABE和KP-ABE都需要达到抗碰撞性，不同用户不能”合并”他们的私钥，以便他们可以一起解密他们都不可以自行解密的密文</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,7 +241,7 @@
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -210,74 +254,104 @@
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/02/16/%E5%88%9D%E8%AF%86%E5%B1%9E%E6%80%A7%E5%8A%A0%E5%AF%86/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2022/02/14/hello-world/" class="archive-article-date">
-  	<time datetime="2022-02-14T03:22:20.144Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-02-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2022/02/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2022/02/14/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">前端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端//" class="article-tag-list-link color3">前端</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/前端/HTML//" class="article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -300,8 +374,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
