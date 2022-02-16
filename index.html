@@ -34,6 +34,7 @@
 
 <meta name="generator" content="Hexo 6.0.0"></head>
 
+<script src="js/hexo_resize_image.js"></script>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -179,18 +180,21 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="初识属性加密"><a href="#初识属性加密" class="headerlink" title="初识属性加密"></a>初识属性加密</h3><h4 id="ABE"><a href="#ABE" class="headerlink" title="ABE"></a>ABE</h4><p>在传统的公钥加密算法中，若要将一份明文文件加密发送给N个不同用户，需要保存N个用户的公钥分别加密N次，形成N份不同的密文分别发送。</p>
-<p><img src="/.com//1.png" alt="avatar"></p>
+<p><img src="/images/%E5%88%9D%E8%AF%86%E5%B1%9E%E6%80%A7%E5%8A%A0%E5%AF%86/1.png" alt="avatar"></p>
 <p>而基于属性的加密(Attribute-based encryption (ABE) )，则只需要对明文文件加密一次，分别发送给N个不同用户，根据相应策略只有特定的用户才可以解密。</p>
-<p><img src="/.com//2.png" alt="avatar"></p>
+<p><img src="/images/%E5%88%9D%E8%AF%86%E5%B1%9E%E6%80%A7%E5%8A%A0%E5%AF%86/2.png" alt="avatar"></p>
 <p>属性加密算法一般包含四个部分：</p>
 <p>​    <strong>Setup</strong>阶段：也称系统初始化阶段，输入系统安全参数，产生相应的公共参数(<em>PK</em>)和系统主密钥(<em>MK</em>)</p>
 <p>​    <strong>KeyGen</strong>阶段：也称密钥生成阶段，解密用户向系统提交自己的属性，获得属性相关联的用户密钥(<em>SK</em>)</p>
 <p>​    <strong>Enc</strong>阶段：也称加密阶段，数据拥有者对数据进行加密得到密文(<em>CT</em>)并发送给用户或者发送到公共云上</p>
 <p>​    <strong>Dec</strong>阶段：也称解密阶段，解密用户获得密文，用自己的密钥(<em>SK</em>)进行解密</p>
 <p>ABE又进一步分为KP-ABE(key-policy ABE)和CP-ABE(ciphertext-policy ABE)两大类。</p>
-<h4 id="KP-ABE"><a href="#KP-ABE" class="headerlink" title="KP-ABE"></a>KP-ABE</h4><p><img src="/.com//3.png" alt="avatar"></p>
+<h4 id="KP-ABE"><a href="#KP-ABE" class="headerlink" title="KP-ABE"></a>KP-ABE</h4><p><img src="/images/%E5%88%9D%E8%AF%86%E5%B1%9E%E6%80%A7%E5%8A%A0%E5%AF%86/3.png?20" alt="avatar"></p>
+<img src="/.com//2.png" width="65%">
+
+
 <p>在基于秘钥的属性加密(KP-ABE)中，访问策略存放在秘钥中。即假设访问策略为一颗树，则树的结构存放于用户的秘钥中，不同用户对应不同的访问策略。密文只需要包含一组属性，相应用户则可与自己的秘钥结合得到明文。</p>
-<h4 id="CP-ABE"><a href="#CP-ABE" class="headerlink" title="CP-ABE"></a>CP-ABE</h4><p><img src="/.com//4.png" alt="avatar"></p>
+<h4 id="CP-ABE"><a href="#CP-ABE" class="headerlink" title="CP-ABE"></a>CP-ABE</h4><p><img src="/images/%E5%88%9D%E8%AF%86%E5%B1%9E%E6%80%A7%E5%8A%A0%E5%AF%86/4.png" alt="avatar"></p>
 <p>在基于秘文的属性加密(KP-ABE)中，访问策略存放在秘钥中。即访问策略存在于密文中，得到密文的用户需要将自己的属性与密文访问策略进行结合以得到明文</p>
 <p>CP-ABE和KP-ABE都需要达到抗碰撞性，不同用户不能”合并”他们的私钥，以便他们可以一起解密他们都不可以自行解密的密文</p>
 
@@ -281,9 +285,14 @@
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<p><img src="/images/hello-world/1.png" alt="avatar"></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<p><img src="/.com//1.png" alt="avatar"></p>
+
+
+
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
